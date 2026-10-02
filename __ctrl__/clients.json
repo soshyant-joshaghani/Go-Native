@@ -1,0 +1,26 @@
+{
+  "web": {
+    "svelte": {
+      "name": "Go-Svelte",
+      "source": "../go-svelte/frontend",
+      "repository": "https://github.com/soshyant-joshaghani/Go-Svelte",
+      "enabled": true
+    },
+    "next": {
+      "name": "Go-Next",
+      "repository": "",
+      "enabled": false
+    },
+    "nuxt": {
+      "name": "Go-Nuxt",
+      "repository": "",
+      "enabled": false
+    }
+  },
+  "android": {
+    "enabled": false
+  },
+  "windows": {
+    "enabled": false
+  }
+}
