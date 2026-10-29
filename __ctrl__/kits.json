@@ -1,0 +1,16 @@
+{
+  "kits": [
+    {
+      "id": "svelte",
+      "label": "Go-Svelte",
+      "source": "../go-svelte/frontend",
+      "repo": "https://github.com/soshyant-joshaghani/Go-Svelte.git",
+      "github": "soshyant-joshaghani/Go-Svelte",
+      "branch": "main",
+      "runtime": "node",
+      "dev": ["npm", "run", "dev"],
+      "cwd": "frontend/web",
+      "scaffold": "svelte"
+    }
+  ]
+}

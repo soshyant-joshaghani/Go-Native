@@ -1,0 +1,36 @@
+# Dev routes — host processes (Vite + uvicorn) and TLS for *.localhost.
+
+http:
+  routers:
+    go-native-backend-host:
+      rule: Host(`api.localhost`)
+      entryPoints:
+        - http
+        - https
+      service: go-native-backend-host
+    go-native-frontend-host:
+      rule: Host(`dashboard.localhost`)
+      entryPoints:
+        - http
+        - https
+      service: go-native-frontend-host
+
+  services:
+    go-native-backend-host:
+      loadBalancer:
+        servers:
+          - url: http://host.docker.internal:8000
+    go-native-frontend-host:
+      loadBalancer:
+        servers:
+          - url: http://host.docker.internal:5000
+
+tls:
+  stores:
+    default:
+      defaultGeneratedCert:
+        resolver: default
+        domain:
+          main: localhost
+          sans:
+            - "*.localhost"
